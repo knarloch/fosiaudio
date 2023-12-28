@@ -38,7 +38,7 @@ LIBRESPOT_DISABLE_AUDIO_CACHE=
 LIBRESPOT_DISABLE_CREDENTIAL_CACHE=
 
 # Play all tracks at approximately the same apparent volume.
-LIBRESPOT_ENABLE_VOLUME_NORMALISATION=
+#LIBRESPOT_ENABLE_VOLUME_NORMALISATION=
 
 # Enable verbose log output.
 #LIBRESPOT_VERBOSE=
@@ -64,7 +64,7 @@ LIBRESPOT_BITRATE="320"
 # Defaults to 44.1kHz meaning no resampling.
 # The option does not exist in upstream librespot.
 # DO NOT file a bug with librespot about this.
-LIBRESPOT_SAMPLE_RATE="96kHz"
+LIBRESPOT_SAMPLE_RATE="44.1kHz"
 
 # Interpolation Quality to use if Resampling. {Low|Medium|High}.
 # Defaults to Low.
@@ -82,7 +82,7 @@ LIBRESPOT_INTERPOLATION_QUALITY="High"
 #LIBRESPOT_CACHE_SIZE_LIMIT=""
 
 # Audio backend to use, alsa or pulseaudio. Defaults to alsa.
-LIBRESPOT_BACKEND="pulseaudio"
+LIBRESPOT_BACKEND="alsa"
 
 # Username used to sign in with.
 # Credentials are not required if LIBRESPOT_DISABLE_DISCOVERY is not set.
@@ -106,7 +106,7 @@ LIBRESPOT_BACKEND="pulseaudio"
 # Range of the volume control (dB) from 0.0 to 100.0.
 # Default for softvol: 60.0.
 # For the alsa mixer: what the control supports.
-LIBRESPOT_VOLUME_RANGE="100.0"
+LIBRESPOT_VOLUME_RANGE="80.0"
 
 # Pregain (dB) applied by volume normalisation from -10.0 to 10.0.
 # Defaults to 0.0.
