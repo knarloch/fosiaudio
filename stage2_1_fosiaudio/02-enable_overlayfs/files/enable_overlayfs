@@ -1,0 +1,29 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          enable_overlayfs
+# Required-Start:
+# Required-Stop:
+# Default-Start: 3
+# Default-Stop:
+# Short-Description: use raspi-config to enable overlayFS (preserve sd card)
+# Description:
+### END INIT INFO
+. /lib/lsb/init-functions
+case "$1" in
+  start)
+    log_daemon_msg "Starting enable_overlayfs - sleeping 300s"
+    nohup bash -c 'sleep 300 && \
+    raspi-config nonint enable_bootro && \
+    update-rc.d enable_overlayfs remove && \
+    rm /etc/init.d/enable_overlayfs && \
+    raspi-config nonint enable_overlayfs && \
+    rm -rf /tmp && ln -sf /dev/shm /tmp && \
+    reboot' &
+    log_end_msg $?
+    exit 0
+    ;;
+  *)
+    echo "Usage: $0 start" >&2
+    exit 3
+    ;;
+esac
