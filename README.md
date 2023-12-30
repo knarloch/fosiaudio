@@ -1,3 +1,43 @@
+# fosiaudio
+
+Sportify streamer based on raspotify and raspberry-pi.
+
+## Forked from pi-gen
+
+Motivation of this project is to build ready-to-go, zero extra configuration
+images for raspberry-pi capable of streaming audio.
+
+## Features and prerequisites
+
+### Raspotify
+
+Package raspotify is installed along with slightly customized configuration
+
+### Hifiberry-dac or teradak
+
+Overlays and configuration to use hifiberry-dac (or compatilbe hardware) as audio
+output are added.
+
+### Read-only SD card
+
+5 minutes after first boot, fosiaudio enables overlayFS, read-only boot partition
+and reboots. On subsequent boots there are no more writes to sd card, solving flash
+wear problem. Fosiaudio reboots every night at 4AM to ensure RAM memory available.
+
+## Build instruction
+
+Follow original documentation as below. Use config file fosiaudio.config
+
+```
+sudo ./build.sh -c ./fosiaudio.config
+```
+
+For subsequent builds, only last stage can be rebuilt to speed up the procedure.
+Increnetals are not well supported so it's good to clean manualy first.
+```
+sudo rm -rf ./work/fosiaudio/stage2_1_fosiaudio && sudo ./build.sh -c ./fosiaudio_only.config
+```
+
 # pi-gen
 
 Tool used to create Raspberry Pi OS images. (Previously known as Raspbian).
