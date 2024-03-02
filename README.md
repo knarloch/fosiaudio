@@ -13,6 +13,12 @@ images for raspberry-pi capable of streaming audio.
 
 Package raspotify is installed along with slightly customized configuration
 
+### fosiaudio_chilli
+
+Project https://github.com/knarloch/fosiaudio_chilli is built from source and installed.
+This project provides simple http server that plays internet radio `ChilliZet`.
+It also provides volume control.
+
 ### Hifiberry-dac or teradak
 
 Overlays and configuration to use hifiberry-dac (or compatilbe hardware) as audio

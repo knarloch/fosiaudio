@@ -1,0 +1,29 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          do_speaker_test
+# Required-Start:
+# Required-Stop:
+# Default-Start: 3
+# Default-Stop:
+# Short-Description: use raspi-config to enable overlayFS (preserve sd card)
+# Description:
+### END INIT INFO
+. /lib/lsb/init-functions
+case "$1" in
+  start)
+    log_daemon_msg "Starting enable_overlayfs - sleeping 60s"
+    nohup bash -c 'sleep 60 && \
+    speaker-test --device softvol --channels 2 --nloops 1 && \
+    sleep 1 && \
+    speaker-test -channels 2 --nloops 1 && \
+    systemctl disable do_speaker_test && \
+    rm /etc/init.d/do_speaker_test && \
+    reboot' &
+    log_end_msg $?
+    exit 0
+    ;;
+  *)
+    echo "Usage: $0 start" >&2
+    exit 3
+    ;;
+esac

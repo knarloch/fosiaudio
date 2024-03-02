@@ -15,6 +15,7 @@ case "$1" in
     nohup bash -c 'sleep 300 && \
     raspi-config nonint enable_bootro && \
     update-rc.d enable_overlayfs remove && \
+    systemctl disable enable_overlayfs && \
     rm /etc/init.d/enable_overlayfs && \
     raspi-config nonint enable_overlayfs && \
     rm -rf /tmp && ln -sf /dev/shm /tmp && \

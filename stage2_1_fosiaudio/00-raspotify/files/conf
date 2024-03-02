@@ -97,7 +97,7 @@ LIBRESPOT_BACKEND="alsa"
 
 # Initial volume in % from 0 - 100.
 # Defaults to 50 For the alsa mixer: the current volume.
-#LIBRESPOT_INITIAL_VOLUME="50"
+LIBRESPOT_INITIAL_VOLUME="100"
 
 # Volume control scale type {cubic|fixed|linear|log}.
 # Defaults to log.
@@ -106,7 +106,7 @@ LIBRESPOT_BACKEND="alsa"
 # Range of the volume control (dB) from 0.0 to 100.0.
 # Default for softvol: 60.0.
 # For the alsa mixer: what the control supports.
-LIBRESPOT_VOLUME_RANGE="80.0"
+LIBRESPOT_VOLUME_RANGE="100.0"
 
 # Pregain (dB) applied by volume normalisation from -10.0 to 10.0.
 # Defaults to 0.0.
