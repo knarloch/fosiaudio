@@ -17,8 +17,8 @@ case "$1" in
     update-rc.d enable_overlayfs remove && \
     systemctl disable enable_overlayfs && \
     rm /etc/init.d/enable_overlayfs && \
-    raspi-config nonint enable_overlayfs && \
     rm -rf /tmp && ln -sf /dev/shm /tmp && \
+    raspi-config nonint enable_overlayfs && \
     reboot' &
     log_end_msg $?
     exit 0
