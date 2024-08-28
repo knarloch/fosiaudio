@@ -12,6 +12,3 @@ install -m 755 fosiaudio_chilli/target/aarch64-unknown-linux-gnu/release/fosiaud
 
 install -m 755 fosiaudio_chilli/etc/systemd/system/fosiaudio_chilli.service         "${ROOTFS_DIR}/etc/systemd/system/"
 install -m 755 fosiaudio_chilli/etc/systemd/system/set_volume_at_startup.service    "${ROOTFS_DIR}/etc/systemd/system/"
-
-# patch vlc binary to work also for root user
-sed -i 's/geteuid/getppid/' "${ROOTFS_DIR}/usr/bin/vlc"
