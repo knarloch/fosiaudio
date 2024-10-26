@@ -8,7 +8,7 @@ source $HOME/.cargo/env
 ./build.sh
 popd
 
-install -m 755 fosiaudio_chilli/target/aarch64-unknown-linux-gnu/release/fosiaudio_chilli	"${ROOTFS_DIR}/usr/bin/"
+install -m 755 fosiaudio_chilli/target/aarch64-unknown-linux-musl/release/fosiaudio_chilli	"${ROOTFS_DIR}/usr/bin/"
 
 install -m 755 fosiaudio_chilli/etc/systemd/system/fosiaudio_chilli.service         "${ROOTFS_DIR}/etc/systemd/system/"
 install -m 755 fosiaudio_chilli/etc/systemd/system/set_volume_at_startup.service    "${ROOTFS_DIR}/etc/systemd/system/"
