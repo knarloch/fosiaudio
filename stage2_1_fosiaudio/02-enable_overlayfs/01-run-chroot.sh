@@ -1,6 +1,6 @@
 #!/bin/bash -ex
 
-echo "0 5 * * * root /usr/sbin/reboot" > /var/spool/cron/crontabs/root
+echo "0 5 * * * root /usr/sbin/reboot" >> /etc/crontab
 systemctl enable enable_overlayfs
 
 systemctl disable apt-daily-upgrade.timer
