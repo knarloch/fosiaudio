@@ -30,6 +30,18 @@ output are added.
 and reboots. On subsequent boots there are no more writes to sd card, solving flash
 wear problem. Fosiaudio reboots every night at 4AM to ensure RAM memory available.
 
+### Autogrzybke
+
+https://github.com/knarloch/fosiaudio_chilli has autogrzybke feature for calling-in missing
+people to lobby during lanparties.
+That feature uses mp3 samples that shall be installed to the image.
+As the recordings are private, these resources are not included by default.
+
+To provide them, set `AUTOGRZYBKE_RESOURCES_TAR_ABSPATH` env variable as follows:
+```
+sudo AUTOGRZYBKE_RESOURCES_TAR_ABSPATH=<absoulte path to tar archive> ./build.sh
+```
+
 ## Build instruction
 
 Follow original documentation as below. Use config file fosiaudio.config
